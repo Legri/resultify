@@ -1,0 +1,44 @@
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+ 
+ 
+ 	 
+.page-footer, .nav-wrapper {
+  background: #00695c;
+  text-transform: uppercase;
+}
+
+.booktable,.viewbooks{
+	margin-top: 50px;
+}
+
+table th{
+	  text-transform: uppercase;
+}
+
+.iris {
+    background-image: url("../uploads/14W25.jpg");
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-size: cover;
+}
+.parallaxText{
+color:#ffffff;	
+margin-top: 0px;
+padding-top: 100px;
+}
+
+.booksaddform{
+	margin:100px
+}
+.autorisationform{
+	padding-top: 100px;
+}
+	
