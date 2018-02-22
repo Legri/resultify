@@ -21,7 +21,7 @@ $text = str_replace($search , $replace, $text);
 		$resultS = $conn->query($sql);
 		mysqli_close($conn);
 		
-		if($resultS){echo 'Записано успішно';}else{
-			echo 'Не записано';}
+		if($resultS){echo '<div class="card-panel hoverable">Successful saved<a href="/books/view">   BOOKS LIST...</a></div>';}else{
+			echo '<div class="card-panel hoverable">No saved<a href="/books/view">   BOOKS LIST...</a></div>';}
 		
 	}

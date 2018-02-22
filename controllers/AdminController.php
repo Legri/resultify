@@ -14,6 +14,9 @@ public static function login($username,$password) {
 if ($username== $clogin && $password == $cpassword){
 		$_SESSION['user']=TRUE;
 		$_SESSION['status']='Password entered correctly';
+		?><script type="text/javascript">
+window.location = "/main"
+</script><?php
 		
 	}else{
 		$_SESSION['user']=FALSE;

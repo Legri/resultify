@@ -1,9 +1,7 @@
 <?php
 class Books {
 	function __construct() {
-		
-		
-		
+	
 	}
 	
 	
@@ -32,11 +30,11 @@ class Books {
 	
 // Create connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
+		
 		if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 		}
-		//echo "Connected successfully";
+		
 		
 		$sql = "SELECT `id`, `name`, `autor`, `foto` FROM `books` ORDER by `date` DESC";
 		$resultS = $conn->query($sql);
@@ -47,6 +45,8 @@ class Books {
 	
 	public static function addBooksItem($addname,$addautor,$addfoto){
 		
+		
+		
 		if ($addfoto==''){$addfoto='nofoto.png';}
 	
 		include(ROOT.'/config/db_config.php');
@@ -56,8 +56,6 @@ class Books {
 		die("Connection failed: " . $conn->connect_error);
 		}
 		
-	
-				
 		$sql = "INSERT INTO books (name, autor, foto)
 VALUES ('$addname','$addautor','$addfoto')";
 		

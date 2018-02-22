@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link type="text/css" rel="stylesheet" href="../../libraries/materialize.min.css" />
 	
 	  <link type="text/css" rel="stylesheet" href="../../libraries/main.css"  />
     
     
-    <title>My template</title>
+    <title>My LIBRARY</title>
     <!--Let browser know website is optimized for mobile-->
     
   </head>
