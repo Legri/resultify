@@ -15,7 +15,7 @@ if ($username== $clogin && $password == $cpassword){
 		$_SESSION['user']=TRUE;
 		$_SESSION['status']='Password entered correctly';
 		?><script type="text/javascript">
-window.location = "/main"
+window.location = "/books"
 </script><?php
 		
 	}else{

@@ -58,7 +58,7 @@ class Router {
 			}
 			
 		}
-		echo $controllerName;
+		//echo $controllerName;
 		if (!$controllerName)
 			{
 	

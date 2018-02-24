@@ -1,6 +1,7 @@
 <?php
 include_once("views/template/header.php");
 ?>
+<?php if ($_SESSION['user']){ ?>
 <script>
 function showHint(id) {
 	var text = $("#textareaupd").val();
@@ -102,8 +103,11 @@ $('#txtHint').html(data);
 </div>
 
 
-
-
+<?php }else{?>
+<script type="text/javascript">
+window.location = "/authorization"
+</script>
 <?php
+}
 include_once("views/template/footer.php");
 ?>
