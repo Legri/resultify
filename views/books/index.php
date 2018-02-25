@@ -14,7 +14,9 @@ app.controller('customersCtrl', function($scope, $http) {
 	
 	$scope.sortType     = 'date'; // set the default sort type
     $scope.sortReverse  = true;  // set the default sort order
-    
+    $scope.myfunct = function() {
+    $scope.currentPage=1;
+  }
     $scope.sortName = function(fieldName){
   	$scope.sortType = fieldName;
   	$scope.sortReverse = !$scope.sortReverse;
@@ -77,14 +79,14 @@ include_once("views/template/header.php");
 				<tr>
             		<th>Id</th>
             	   
-        			<th><a href="" ng-click=sortName('name') >Name</a></th>
+        			<th>Name</th>
         			<th><a href="" ng-click=sortName('autor') >Autor</a></th>
         			<th>foto</th>
         			<th>edit</th>
         			
      			</tr>
      			
-  <tr ng-repeat="x in names |orderBy:sortType:sortReverse| startFrom:(currentPage - 1) * pageSize | limitTo:pageSize |  filter:searchText:strict" >
+  <tr ng-repeat="x in names |  filter:searchText:strict| orderBy:sortType:sortReverse| startFrom:(currentPage - 1) * pageSize | limitTo:pageSize " >
     <td>{{ x.id }}</td>
     <td>{{ x.name  }}</td>
      <td>{{ x.autor }}</td>
@@ -96,10 +98,10 @@ include_once("views/template/header.php");
   </tr>
 </table>
  
-	<pagination total-items="arr=(names|  filter:searchText:strict).length"  ng-model="currentPage" items-per-page="pageSize" ></pagination>
+	<pagination total-items="arr=(names |  filter:searchText:strict).length"  ng-model="currentPage" items-per-page="pageSize" ></pagination>
  
-  <label>Search by name <input ng-model="searchText.name"></label>
-   <label>Search by autor <input ng-model="searchText.autor"></label>
+  <label>Search by name <input ng-model="searchText.name" ng-change="myfunct()"></label>
+   <label>Search by autor <input ng-model="searchText.autor" ng-change="myfunct()></label>
 </div>
  
 
