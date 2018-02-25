@@ -25,16 +25,6 @@ app.controller('customersCtrl', function($scope, $http) {
    $http.get("../../components/list.php")
    .then(function (response) {$scope.names = response.data.records;});
 })
-.directive('theNameOfYourDirective', function() {
-return {
-    // Restrict it to be an attribute in this case
-    restrict: 'A',
-    // responsible for registering DOM listeners as well as updating the DOM
-    link: function() {
-        $('.materialboxed').materialbox();
-    }
-   };
- })
 .filter('startFrom',function(){
 	return function(data, start ){
 		 if (!data || !data.length) { return; }
@@ -42,6 +32,17 @@ return {
 }
 })
 ;
+
+
+app.directive("switch", [function() {
+  return {
+    link: function(scope, element, attr) {
+       
+                       $('.materialboxed').materialbox();
+        
+     }
+  }
+}]);
 
 </script>
 	
@@ -83,11 +84,11 @@ include_once("views/template/header.php");
         			
      			</tr>
      			
-  <tr ng-repeat="x in names |orderBy:sortType:sortReverse| startFrom:(currentPage - 1) * pageSize | limitTo:pageSize | filter:searchText:strict" theNameOfYourDirective>
+  <tr ng-repeat="x in names |orderBy:sortType:sortReverse| startFrom:(currentPage - 1) * pageSize | limitTo:pageSize | filter:searchText:strict" >
     <td>{{ x.id }}</td>
     <td>{{ x.name  }}</td>
      <td>{{ x.autor }}</td>
-     <td > <img class="materialboxed" width="30" src="../../uploads/{{ x.foto }}"  ></td>
+     <td > <img class="materialboxed" width="30" src="../../uploads/{{ x.foto }}"  switch></td>
       
       <td><?php if ($_SESSION['user']){ ?><a href='/books/view/{{ x.id }}'><br><span class='span6 pull-right'>Edit</a>
       <?php } ?>
