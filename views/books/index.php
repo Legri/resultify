@@ -57,12 +57,6 @@ include_once("views/template/header.php");
 ?>
 
 
-<div data-ng-app="myApp">
-
-
-	
-
-</div>
 
 
 <div data-ng-app="myApp"> 
@@ -77,9 +71,9 @@ include_once("views/template/header.php");
 
 <table class="bordered responsive-table booktable" >
 				<tr>
-            		<th>Id</th>
+            		<th><a href="" ng-click=sortName('date') >Id</a></th>
             	   
-        			<th>Name</th>
+        			<th><a href="" ng-click=sortName('name') >Name</a></th>
         			<th><a href="" ng-click=sortName('autor') >Autor</a></th>
         			<th>foto</th>
         			<th>edit</th>
@@ -120,8 +114,10 @@ include_once("views/template/header.php");
    
 
 
-
+<div style="display: none"></div>
 <?php
 include_once("views/template/footer.php");
+
 ?>
+
 
